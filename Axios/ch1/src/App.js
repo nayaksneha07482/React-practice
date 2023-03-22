@@ -20,16 +20,14 @@ function App() {
       const getApiData = async () => {
         try {
           const res = await axios.get("https://jsonplaceholder.typicode.com/posts")
-          setData(res.data);
-        } catch (err) {
-          setError(err.message)
+            setData(res.data);
+        } catch (error) {
+          setError(error)
         }
       }
   useEffect(()=>{
     getApiData()
   },[])
-
-  
   return (
     <>
       <h1>Axios concept in React</h1>
